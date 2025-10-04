@@ -1,0 +1,23 @@
+[versions]
+kotlin = "2.2.20" # https://github.com/JetBrains/kotlin
+serialization = "1.9.0" # https://github.com/Kotlin/kotlinx.serialization
+coroutines = "1.10.2" # https://github.com/Kotlin/kotlinx.coroutines
+junit = "4.13.2" # https://github.com/junit-team/junit4
+decimal-js = "10.6.0" # https://mikemcl.github.io/decimal.js/
+multiplatform-android = "8.12.3" # https://developer.android.com/kotlin/multiplatform/plugin
+maven-central-publish = "0.34.0" # https://github.com/vanniktech/gradle-maven-publish-plugin
+git-version = "4.0.0" # https://github.com/palantir/gradle-git-version
+
+[libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+junit = { module = "junit:junit", version.ref = "junit" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "serialization" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+
+[plugins]
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-multiplatform-android-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "multiplatform-android" }
+maven-central-publish = { id = "com.vanniktech.maven.publish", version.ref = "maven-central-publish" }
+palantirGitVersion = { id = "com.palantir.git-version", version.ref = "git-version" }
