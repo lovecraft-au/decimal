@@ -1,5 +1,6 @@
 package au.lovecraft.math.decimal
 
+import kotlinx.serialization.KSerializer
 import platform.Foundation.NSDecimalNumber
 import platform.Foundation.NSDecimalNumberHandler
 import platform.Foundation.NSOrderedDescending
@@ -153,6 +154,8 @@ actual value class Decimal private constructor(val value: PlatformDecimal) : Com
 
         actual fun from(decimal: PlatformDecimal) = Decimal(decimal)
         actual fun from(integer: Int) = Decimal(NSDecimalNumber(integer))
+
+        actual fun serializer(): KSerializer<Decimal> = DecimalAsStringSerializer
     }
 
     actual fun toDouble(): Double = this.value.doubleValue()

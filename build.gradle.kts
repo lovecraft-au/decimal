@@ -5,6 +5,7 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlin.multiplatform.android.library)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.palantirGitVersion)
     alias(libs.plugins.maven.central.publish)
     id("maven-publish")
@@ -50,6 +51,7 @@ kotlin {
         commonMain.dependencies {
             api(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.core)
+            implementation(libs.kotlinx.serialization.json)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -85,7 +87,9 @@ kotlin {
 
 mavenPublishing {
     publishToMavenCentral()
-    signAllPublications()
+    if (System.getenv("GITHUB_ACTIONS") == "true") {
+        signAllPublications()
+    }
 
     coordinates(group.toString(), name, version.toString())
 

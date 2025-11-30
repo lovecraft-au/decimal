@@ -1,5 +1,7 @@
 package au.lovecraft.math.decimal
 
+import kotlinx.serialization.KSerializer
+
 actual typealias PlatformDecimal = DecimalJs
 
 /**
@@ -111,6 +113,8 @@ actual value class Decimal private actual constructor(actual val value: Platform
             } catch (e: Throwable) {
                 null
             }
+
+        actual fun serializer(): KSerializer<Decimal> = DecimalAsStringSerializer
     }
 
     actual constructor(int: Int) : this(DecimalJs(int).stripTrailingZeros())
