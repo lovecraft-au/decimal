@@ -1,5 +1,6 @@
 package au.lovecraft.math.decimal
 
+import kotlinx.serialization.KSerializer
 import java.math.BigDecimal
 import java.math.RoundingMode
 
@@ -95,6 +96,8 @@ actual value class Decimal private constructor(val value: PlatformDecimal) : Com
 
         actual fun from(decimal: PlatformDecimal) = Decimal(decimal.stripTrailingZeros())
         actual fun from(integer: Int) = Decimal(BigDecimal(integer).stripTrailingZeros())
+
+        actual fun serializer(): KSerializer<Decimal> = DecimalAsStringSerializer
     }
 
     actual fun equals(other: Decimal): Boolean = value.compareTo(other.value) == 0

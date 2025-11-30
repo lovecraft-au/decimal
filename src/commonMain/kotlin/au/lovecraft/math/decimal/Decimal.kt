@@ -1,9 +1,12 @@
 package au.lovecraft.math.decimal
 
+import kotlinx.serialization.Serializable
+
 expect class PlatformDecimal
 
 const val GeneralDecimalRoundingScale: Int = 10
 
+@Serializable(with = DecimalAsStringSerializer::class)
 expect value class Decimal private constructor(val value: PlatformDecimal) : Comparable<Decimal> {
 
     constructor(int: Int)
