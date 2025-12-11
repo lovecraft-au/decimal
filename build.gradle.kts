@@ -18,6 +18,7 @@ version = gitVersion().removePrefix("v")
 
 kotlin {
     jvmToolchain(21)
+    withSourcesJar()
     @OptIn(ExperimentalKotlinGradlePluginApi::class)
     compilerOptions {
         freeCompilerArgs.addAll(
