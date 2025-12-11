@@ -15,6 +15,7 @@ group = "au.lovecraft"
 
 val gitVersion: groovy.lang.Closure<String> by extra
 version = gitVersion().removePrefix("v")
+println("Building version: $version")
 
 kotlin {
     jvmToolchain(21)
