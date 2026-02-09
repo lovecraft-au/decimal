@@ -1,12 +1,12 @@
 [versions]
-kotlin = "2.2.21" # https://github.com/JetBrains/kotlin
-serialization = "1.9.0" # https://github.com/Kotlin/kotlinx.serialization
+kotlin = "2.3.10" # https://github.com/JetBrains/kotlin
+serialization = "1.10.0" # https://github.com/Kotlin/kotlinx.serialization
 coroutines = "1.10.2" # https://github.com/Kotlin/kotlinx.coroutines
 junit = "4.13.2" # https://github.com/junit-team/junit4
 decimal-js = "10.6.0" # https://mikemcl.github.io/decimal.js/
-multiplatform-android = "8.12.3" # https://developer.android.com/kotlin/multiplatform/plugin
-maven-central-publish = "0.35.0" # https://github.com/vanniktech/gradle-maven-publish-plugin
-git-version = "4.2.0" # https://github.com/palantir/gradle-git-version
+multiplatform-android = "8.13.2" # https://developer.android.com/kotlin/multiplatform/plugin
+maven-central-publish = "0.36.0" # https://github.com/vanniktech/gradle-maven-publish-plugin
+git-version = "4.3.0" # https://github.com/palantir/gradle-git-version
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }

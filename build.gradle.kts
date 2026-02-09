@@ -28,7 +28,7 @@ kotlin {
         )
     }
     androidLibrary {
-        namespace = "com.capy.budget.client.shared"
+        namespace = "au.lovecraft.decimal"
         compileSdk = 36
         minSdk = 29
     }
